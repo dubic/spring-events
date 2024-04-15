@@ -1,10 +1,31 @@
 # spring-events
 A POC for spring events sub system with the following events:
 
-1. Spring application events: **ApplicationContextInitializedEvent**, **ApplicationEnvironmentPreparedEvent**, **ApplicationFailedEvent**, **ApplicationPreparedEvent**, **ApplicationReadyEvent**, **ApplicationStartedEvent**, **ApplicationStartingEvent**, **ApplicationContextEvent**
-2. Testing events: **TestContextEvent**, **AfterTestClassEvent**, **AfterTestExecutionEvent**, **AfterTestMethodEvent**, **BeforeTestClassEvent**, **PrepareTestInstanceEvent**
-3. Security events: **AuthenticationFailureBadCredentialsEvent**, **AuthorizationDeniedEvent<T>**
-4. Relational data events: **RepositoriesPopulatedEvent**, **BeforeSaveEvent<E>**
+### Spring application events
+1. ApplicationContextInitializedEvent
+2. ApplicationEnvironmentPreparedEvent
+3. ApplicationFailedEvent
+4. ApplicationPreparedEvent
+5. ApplicationReadyEvent
+6. ApplicationStartedEvent
+7. ApplicationStartingEvent
+8. ApplicationContextEvent
+
+### Testing events
+1. TestContextEvent
+2. AfterTestClassEvent
+3. AfterTestExecutionEvent
+4. AfterTestMethodEvent
+5. BeforeTestClassEvent
+6. PrepareTestInstanceEvent
+
+### Security events 
+1. AuthenticationFailureBadCredentialsEvent
+2. AuthorizationDeniedEvent<T>
+
+### Relational data events
+1. RepositoriesPopulatedEvent
+2. BeforeSaveEvent<E>
 
 ### Asynchronous events
 
