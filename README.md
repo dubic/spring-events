@@ -1,34 +1,38 @@
-# spring-events
-A POC for spring events sub system with the following events:
+# Spring events
+A POC for demonstrating real usages of the spring events sub system:
 
 ### Spring application events
 1. ApplicationContextInitializedEvent
-2. ApplicationEnvironmentPreparedEvent
-3. ApplicationFailedEvent
-4. ApplicationPreparedEvent
-5. ApplicationReadyEvent
-6. ApplicationStartedEvent
-7. ApplicationStartingEvent
-8. ApplicationContextEvent
-
-### Testing events
-1. TestContextEvent
-2. AfterTestClassEvent
-3. AfterTestExecutionEvent
-4. AfterTestMethodEvent
-5. BeforeTestClassEvent
-6. PrepareTestInstanceEvent
+2. ApplicationFailedEvent
+3. ApplicationPreparedEvent
+4. ApplicationReadyEvent
+5. ApplicationStartedEvent
+6. ApplicationStartingEvent
+7. ApplicationContextEvent
 
 ### Security events 
 1. AuthenticationFailureBadCredentialsEvent
 2. AuthorizationDeniedEvent<T>
 
 ### Relational data events
-1. RepositoriesPopulatedEvent
-2. BeforeSaveEvent<E>
+1. BeforeSaveEvent<E>
+
+### Custom events
+sending notifications
+handling side effects
 
 ### Asynchronous events
+1. must enable spring boot async
 
-### Events within a transaction (even async)
+### Events within a transaction (even async) - Transaction event listener
+works without async
 
 ### Sticky events that survive application shutdown.
+1. works with spring modulith
+2. must be annotated with @Transactional
+
+
+curl -X 'GET' \
+'http://localhost:8000/smart-meter/api/v1/users' \
+-H 'accept: application/json' \
+-H 'Authorization: Bearer eyJhbGciOiJSUzI1NiJ9.eyJsYXN0TmFtZSI6IlV6dWVnYnUiLCJmaXJzdExvZ2luIjpmYWxzZSwidXNlcl9uYW1lIjoiRHViZW0uVXp1ZWdidSIsIm1vYmlsZU5vIjoiMjM0ODAzMjM1NjgwMSIsImNsaWVudF9pZCI6IklLSUFCNDg5MkU2NzlBOTk4QzQ1RUY1MTcxNERFQjQ5MUFEQjQ4RkIwMUU2IiwiZmlyc3ROYW1lIjoiRHViZW0iLCJlbWFpbFZlcmlmaWVkIjp0cnVlLCJhdWQiOlsiYXJiaXRlciIsImNhZXNhciIsImhpbXMtcG9ydGxldCIsImlzdy1jb2xsZWN0aW9ucyIsImlzdy1jb3JlIiwiaXN3LWluc3RpdHV0aW9uIiwiaXN3LWxlbmRpbmctc2VydmljZSIsImlzdy1vbmJvYXJkaW5nIiwiaXN3LXBheW1lbnRnYXRld2F5Iiwia3ljLXNlcnZpY2UiLCJwYXNzcG9ydCIsInByb2plY3QteC1tZXJjaGFudCIsInJlY3VycmVudC1iaWxsaW5nLWFwaSIsInJlZmVycmFsLXNlcnZpY2UtYXBpIiwic21hcnRfbWV0ZXIiLCJ0cmFuc2Zlci1zZXJ2aWNlLWFkbWluIiwidHJhbnNmZXItc2VydmljZS1jb3JlIiwid2FsbGV0Iiwid2VicGF5LXBvcnRsZXQiXSwic2NvcGUiOlsicHJvZmlsZSJdLCJleHAiOjE3MTkxMjczMzIsIm1vYmlsZU5vVmVyaWZpZWQiOnRydWUsImNsaWVudF9uYW1lIjoic21hcnRfbWV0ZXIiLCJqdGkiOiJiZjE0MDc2OS0zZWJkLTRjNmUtOGU0MC1lZjk1OWZlMWJmMjUiLCJlbWFpbCI6IkR1YmVtLlV6dWVnYnVAaW50ZXJzd2l0Y2hncm91cC5jb20iLCJwYXNzcG9ydElkIjoiQUE4NzYzNzEtOTIyMS0zNDJELUJGMzMtRUM3MkRDNkUyQTNCIn0.L7fRWnQx5_b11Hl3nwnq53Ntik0SOvMddtp-XGgqOpl6RFHTlI3FO1e53OSukfE5lbpAz2NcGT9qQO_0m9tCqDXABiJWJQRh6ydV-rIVIqQy2GcyRLxpvUWw1x-Mvkx0yWZ_oxb0IWPdIU6DPtSuJ0IONvxV9i1xx93cfI4MIglsLOubMzFK_ar2rusJ0GidUUw_ntq8P9EIo0kUaTRKgHZaBU6ox8UOc7eEJ0lPRRrWRf-abe9aDYi42bMoe0uoapfUkobNH5K63cyJpj7ikH7_TUB1-4LgIDLrAUyAHSVAjEc6FIdqr9gUAR4G-pvHzq2uzvYd-e2fmIEi68DsVg'
